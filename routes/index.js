@@ -1,20 +1,26 @@
 const request = require('request');
 
 const horisAPI = async () =>{
-  const signs = ["libra", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "scorpio", "sagittarius", "capricorn"]
-  let signDatas = []
+  return new Promise((resolve, reject) => {
+    const signs = ["libra", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "scorpio", "sagittarius", "capricorn"]
+    let promises = [];
 
-  for(let i = 0; i < signs.length; i++){
-    request(`https://ohmanda.com/api/horoscope/${signs[i]}`, function (err, res, body) {
-      if (!err && res.statusCode == 200) {
-        const signObj = JSON.parse(body)
-        // console.log(signObj)
-        signDatas.push(signObj)
-        // console.log(typeof(signDatas))
-      }
-    })
-  }
-  return signDatas
+    for (let i = 0; i < signs.length; i++) {
+      promises.push(
+        new Promise((resolve, reject) => {
+          
+          request.get(`https://ohmanda.com/api/horoscope/${signs[i]}`, (err, res, body) => {
+            if (res.statusCode === 200) {
+              resolve(JSON.parse(body));
+            } else {
+              reject(err);
+            }
+          });
+        })
+      );
+    }
+    Promise.all(promises).then((horoscopeIds) => resolve(horoscopeIds));
+  });
 }
 
 module.exports = (app) => {
