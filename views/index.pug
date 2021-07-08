@@ -8,8 +8,10 @@ block content
           //- img.card-img-top(src=signData.picUrl, alt='Card img')
           .card-body
             h4.card-title= signData.sign
-            small.text-muted= signData.date
-            p.card-text= signData.horoscope
+            //- small.text-muted= signData.date
+            //- p.card-text= signData.horoscope
+            .text-right
+                a.card-link(href=`/horoscope/${signData.sign}`) View #{signData.sign} Horoscope
           
           
           
