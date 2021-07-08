@@ -19,19 +19,25 @@ const horisAPI = async () =>{
         })
       );
     }
-    Promise.all(promises).then((horoscopeIds) => resolve(horoscopeIds));
+    Promise.all(promises).then((data) => resolve(data));
   });
 }
 
 module.exports = (app) => {
 
   app.get('/', async (req, res) => {
+    horisAPI()
+    .then((data) => {
+      console.log("------HERE var---------", data)
+      res.render('index', { signDatas: data})
+    })
 
-    const signDatas = await horisAPI()
     
-    console.log("------HERE var---------", signDatas)
-    // console.log("--------HERE await func call--------",await horisAPI())
-    res.render('index', { signDatas: signDatas});
+    // const signDatas = await horisAPI()
+    
+    // console.log("------HERE var---------", signDatas)
+    // // console.log("--------HERE await func call--------",await horisAPI())
+    // res.render('index', { signDatas: signDatas});
   });
 
 }
