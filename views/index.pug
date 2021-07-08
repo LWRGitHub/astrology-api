@@ -1,12 +1,18 @@
 extends layout
 
 block content
+  .row
+    each signData, index in signDatas
+      .col-sm-4.justify-content-center
+        .card
+          //- img.card-img-top(src=signData.picUrl, alt='Card image cap')
+          .card-body
+            h4.card-title= signData.sign
+            small.text-muted= signData.date
+            p.card-text= signData.horoscope
+          
+          
+          
   
-          
-          
-  nav(aria-label='Page navigation example').d-flex.justify-content-center
-    ul.pagination
-      if currentPage > 1
-        li.page-item
        
 
