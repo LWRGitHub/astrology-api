@@ -26,7 +26,7 @@ module.exports = (app) => {
     app.get(`/horoscope/:sign`, async (req, res) => {
         horisAPI(req.params.sign)
         .then((data) => {
-            console.log("------HERE var---------", data)
+            // console.log("------HERE var---------", data)
             res.render('horoscope', { signDatas: data})
         })
     });
