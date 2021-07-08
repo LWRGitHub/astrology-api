@@ -1,28 +1,31 @@
 const request = require('request');
 
+const horisAPI = async () =>{
+  const signs = ["libra", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "scorpio", "sagittarius", "capricorn"]
+  let signDatas = []
+
+  for(let i = 0; i < signs.length; i++){
+    request(`https://ohmanda.com/api/horoscope/${signs[i]}`, function (err, res, body) {
+      if (!err && res.statusCode == 200) {
+        const signObj = JSON.parse(body)
+        // console.log(signObj)
+        signDatas.push(signObj)
+        // console.log(typeof(signDatas))
+      }
+    })
+  }
+  return signDatas
+}
+
 module.exports = (app) => {
 
-  /* GET home page. */
-  // with pagination
-  app.get('/', (req, res) => {
+  app.get('/', async (req, res) => {
 
-    const signs = ["libra", "aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "scorpio", "sagittarius", "capricorn"]
-    let signDatas = []
-
-    for(let i = 0; i < signs.length; i++){
-      request(`https://ohmanda.com/api/horoscope/${signs[i]}`, function (err, res, body) {
-        if (!err && res.statusCode == 200) {
-          const signObj = JSON.parse(body)
-          // console.log(signObj)
-          signDatas.push(signObj)
-          // console.log(signDatas)
-        }
-      })
-    }
+    const signDatas = await horisAPI()
     
-    console.log("------HERE---------",signDatas)
-    res.render('index', { signDatas: signDatas });
-
+    console.log("------HERE var---------", signDatas)
+    // console.log("--------HERE await func call--------",await horisAPI())
+    res.render('index', { signDatas: signDatas});
   });
 
 }

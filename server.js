@@ -1,7 +1,7 @@
-if (!process.env.PORT) {
-    require('dotenv').config()
-    process.env.NODE_ENV = "dev"
-  }
+// if (!process.env.PORT) {
+//     require('dotenv').config()
+//     process.env.NODE_ENV = "dev"
+//   }
   
   const express = require('express');
   const path = require('path');
@@ -12,14 +12,6 @@ if (!process.env.PORT) {
   const methodOverride = require('method-override')
   
   const app = express();
-  
-//   const mongoose = require('mongoose');
-//   mongoose.connect('mongodb://localhost/local', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false
-//   });
   
   // view engine setup
   app.set('views', path.join(__dirname, 'views'));
@@ -45,7 +37,8 @@ if (!process.env.PORT) {
   app.use((req, res, next) => {
     const err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    console.log(err)
+    // next(err);
   });
   
   // error handler
