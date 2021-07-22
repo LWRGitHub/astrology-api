@@ -2,16 +2,18 @@ extends layout
 
 block content
   .row
-    each signData, index in signDatas
-      .col-sm-4.justify-content-center
+    div.card-columns
+      each signData, index in signDatas
+        //- .col-sm-4.justify-content-center
         .card
-          img.card-img-top(src=signData.src)
-          .card-body
-            h4.card-title= signData.sign
-            //- small.text-muted= signData.date
-            //- p.card-text= signData.horoscope
-            .text-right
-                a.card-link(href=`/horoscope/${signData.sign}`) View #{signData.sign} Horoscope
+          a.card-link(href=`/horoscope/${signData.sign}`)
+            img.card-img-top(src=signData.src)
+            .card-body
+              h4.card-title= signData.sign
+              //- small.text-muted= signData.date
+              //- p.card-text= signData.horoscope
+              //- .text-right
+                  //- a.card-link(href=`/horoscope/${signData.sign}`) View #{signData.sign} Horoscope
           
           
           
