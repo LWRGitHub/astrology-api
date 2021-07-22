@@ -6,9 +6,10 @@ This project is a grate web page to get your daily horoscope from. It uses the [
 ## Tech Used
 - JavaScript
 - Node.js
+- Pug
+- Express
 - Bootstrap
 - HTML/CSS
-- Pug
 - Heroku [View Deployment](https://astrology-horoscope.herokuapp.com)
 
 ## Setup, Install & Run
