@@ -22,18 +22,18 @@ const horisAPI = async (sign) =>{
 } 
 
 const signs = [
-  {"sign":"libra","src":"#"}, 
-  {"sign":"aquarius","src":"#"},
-  {"sign":"pisces","src":"#"},
-  {"sign":"aries","src":"#"},
-  {"sign":"taurus","src":"#"},
-  {"sign":"gemini","src":"#"},
-  {"sign":"cancer","src":"#"},
-  {"sign":"leo","src":"#"},
-  {"sign":"virgo","src":"#"},
-  {"sign":"scorpio","src":"#"},
-  {"sign":"sagittarius","src":"#"},
-  {"sign":"capricorn","src":"#"}, 
+  {"sign":"libra","src":"img/libra.jpg"}, 
+  {"sign":"aquarius","src":"img/aquarius.jpg"},
+  {"sign":"pisces","src":"img/pisces.jpg"},
+  {"sign":"aries","src":"img/aries.jpg"},
+  {"sign":"taurus","src":"img/taurus.jpg"},
+  {"sign":"gemini","src":"img/gemini.jpg"},
+  {"sign":"cancer","src":"img/cancer.jpg"},
+  {"sign":"leo","src":"img/leo.jpg"},
+  {"sign":"virgo","src":"img/virgo.jpg"},
+  {"sign":"scorpio","src":"img/scorpio.jpg"},
+  {"sign":"sagittarius","src":"img/sagittarius.jpg"},
+  {"sign":"capricorn","src":"img/capricorn.jpg"}, 
 ]
 
 module.exports = (app) => {
