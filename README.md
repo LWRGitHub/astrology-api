@@ -15,3 +15,20 @@ npm install
 
 ## References
 - [API](http://ohmanda.com/api/horoscope/)
+
+
+## IMG
+
+***Home***
+
+<img alt="Screenshot of the astrology home page. It has images & names of all the zodiac signs." src="https://raw.githubusercontent.com/LWRGitHub/astrology-api/main/public/img/readme/home.png" />
+
+<!-- ***Sign***
+
+<img alt="" src="" width="50%" align="right" />
+
+<img alt="" src="" width="50%" />
+
+<img alt="" src="" width="50%" align="right" />
+
+<img alt="" src="" width="50%" /> -->
