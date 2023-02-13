@@ -1,7 +1,7 @@
 # Astrology Site 
 This project is a grate web page to get your daily horoscope from. It uses the [Horoscope API from astrology.com](http://ohmanda.com/api/horoscope/)
 
-[View Website](https://astrology-horoscope.herokuapp.com)
+<!-- [View Website](https://astrology-horoscope.herokuapp.com) -->
 
 ## Tech Used
 - JavaScript
@@ -10,7 +10,7 @@ This project is a grate web page to get your daily horoscope from. It uses the [
 - Express
 - Bootstrap
 - HTML/CSS
-- Heroku [View Deployment](https://astrology-horoscope.herokuapp.com)
+<!-- - Heroku [View Deployment](https://astrology-horoscope.herokuapp.com) -->
 
 ## Setup, Install & Run
 ```
